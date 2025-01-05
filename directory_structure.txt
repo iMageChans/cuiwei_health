@@ -1,0 +1,162 @@
+.
+├── README.md
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── components
+│   │   ├── AppCTA.tsx
+│   │   ├── ArticleCard.tsx
+│   │   ├── ArticleLayout.tsx
+│   │   ├── DownloadButton.tsx
+│   │   ├── ErrorBoundary.tsx
+│   │   ├── Footer.module.css
+│   │   ├── Footer.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── ScrollButton.tsx
+│   │   ├── StatCard.tsx
+│   │   ├── StoryCard.tsx
+│   │   ├── StoryHeroSlider.tsx
+│   │   ├── TestimonialSlider.tsx
+│   │   ├── ToolCard.tsx
+│   │   └── icons
+│   │       └── ArrowRight.tsx
+│   ├── globals.css
+│   ├── knowledge
+│   │   ├── basics
+│   │   │   ├── app-stories
+│   │   │   │   └── page.tsx
+│   │   │   ├── heart-rate-101
+│   │   │   │   └── page.tsx
+│   │   │   ├── heart-rate-zones
+│   │   │   │   └── page.tsx
+│   │   │   ├── high-heart-rate
+│   │   │   │   └── page.tsx
+│   │   │   ├── normal-ranges
+│   │   │   │   └── page.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── resting-heart-rate
+│   │   │   │   └── page.tsx
+│   │   │   └── statistics
+│   │   │       └── page.tsx
+│   │   ├── health
+│   │   │   └── stress
+│   │   │       ├── exercise
+│   │   │       │   └── page.tsx
+│   │   │       ├── meditation
+│   │   │       │   └── page.tsx
+│   │   │       └── stress-heart
+│   │   │           └── page.tsx
+│   │   ├── lifestyle
+│   │   │   ├── exercise
+│   │   │   │   └── page.tsx
+│   │   │   ├── nutrition
+│   │   │   │   └── page.tsx
+│   │   │   └── sleep
+│   │   │       └── page.tsx
+│   │   ├── page.tsx
+│   │   └── stress
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── stories
+│   │   └── page.tsx
+│   ├── tools
+│   │   ├── breathing-exercise
+│   │   │   ├── components
+│   │   │   │   ├── AudioFeedback.tsx
+│   │   │   │   ├── BreathingAnimation.tsx
+│   │   │   │   └── ParticlesAnimation.tsx
+│   │   │   ├── metadata.ts
+│   │   │   ├── page.tsx
+│   │   │   └── types.ts
+│   │   ├── heart-rate-calculator
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   └── stress-test
+│   │       └── page.tsx
+│   └── types
+│       └── article.ts
+├── directory_structure.txt
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── postcss.config.mjs
+├── public
+│   ├── about
+│   │   ├── brand-story.png
+│   │   └── team.png
+│   ├── apppreview.png
+│   ├── articles
+│   │   ├── Is Your Heart Rate Too High.png
+│   │   ├── article1.png
+│   │   ├── article11.png
+│   │   ├── article12.png
+│   │   ├── article13.png
+│   │   ├── article2.png
+│   │   ├── article3.png
+│   │   ├── article4.png
+│   │   ├── article5.png
+│   │   ├── article6.png
+│   │   ├── article7.png
+│   │   ├── article8.jpg
+│   │   ├── article9.png
+│   │   ├── articleten.png
+│   │   ├── author1.png
+│   │   ├── author10.png
+│   │   ├── author12.png
+│   │   ├── author13.png
+│   │   ├── author2.png
+│   │   ├── author3.png
+│   │   ├── author4.png
+│   │   ├── author5.png
+│   │   ├── author6.png
+│   │   ├── author7.png
+│   │   ├── author8.png
+│   │   └── author9.png
+│   ├── device-hero.svg
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── hero.png
+│   ├── logo.png
+│   ├── next.svg
+│   ├── photo
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   ├── 3.png
+│   │   ├── 4.png
+│   │   └── 5.png
+│   ├── qr-code.png
+│   ├── stories
+│   │   ├── hero-1.png
+│   │   ├── hero-2.png
+│   │   ├── hero-3.png
+│   │   ├── hero-4.png
+│   │   ├── hero-5.png
+│   │   ├── hero-6.png
+│   │   ├── story-1.png
+│   │   ├── story-2.png
+│   │   └── story-3.png
+│   ├── tools
+│   │   ├── ambient.mp3
+│   │   ├── breathe.png
+│   │   ├── ideal-heart-rate.png
+│   │   ├── qr-code.png
+│   │   ├── relax.png
+│   │   └── stress-test.png
+│   ├── vercel.svg
+│   └── window.svg
+├── src
+│   └── app
+│       ├── favicon.ico
+│       ├── fonts
+│       │   ├── GeistMonoVF.woff
+│       │   └── GeistVF.woff
+│       ├── globals.css
+│       ├── layout.tsx
+│       └── page.tsx
+├── tailwind.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+
+40 directories, 120 files

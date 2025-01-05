@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pulseheath.com/
+
+# Sitemaps
+Sitemap: https://pulseheath.com/sitemap.xml
