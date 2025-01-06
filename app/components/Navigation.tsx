@@ -115,7 +115,7 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`nav-mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className={`nav-mobile-menu ${isMobileMenuOpen ? 'open' : 'hidden lg:gap-x-12'}`}>
           <Link href="/" className={`nav-mobile-link ${pathname === '/' ? 'active' : ''}`}>
             Home
           </Link>
