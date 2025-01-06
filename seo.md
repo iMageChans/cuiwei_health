@@ -56,4 +56,27 @@ module.exports = {
 };
 ```
 
-3. GA & bing
+3. GA
+
+GA的参考指标 着陆页,合理的区分用户是从哪个页面访问，以及对应页面的内容是什么，然后拓展相关内容，贴合其他品牌关键词也是提升落地的方法
+
+![image](https://github.com/user-attachments/assets/61364f74-f4fb-41c5-9058-ae423525fdc4)
+
+具体哪些国家的访问量比较高，可以针对对应的国家去做出一些优化，比如当地的习俗？各种节日对产品的影响，做一些本地化相关的内容，或者针对流量大的国家 做网站的本地化
+
+![image](https://github.com/user-attachments/assets/1cbc9355-5135-47f1-95f7-dc41a09d1085)
+
+
+
+
+## 杂项
+
+![image](https://github.com/user-attachments/assets/c866573f-f6be-4930-9be9-296dad03ae0c)
+
+
+
+
+
+
+
+
