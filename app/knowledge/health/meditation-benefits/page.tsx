@@ -1,6 +1,28 @@
 import ArticleLayout from '../../../components/ArticleLayout'
 import Image from 'next/image'
 
+export const metadata = {
+    title: "Meditation Benefits", // 单个文章的内容标题  大概就是这篇文章的主要内容  和page配置的title保持一致即可
+    description: "Discover the numerous benefits of meditation for stress management and overall well-being", // 单个文章的内容描述 和page配置的description保持一致即可
+    keywords: [
+        // 这个很重要 文章内所描述的一些 特点 关联网站 等等的一些词汇填入
+        "Pulse",
+        "Heart rate monitor",
+        "Electrocardiogram",
+        "Pulse rate",
+        "Measure your pulse",
+        "Health",
+    ],
+    // openGraph 为开放数据 既 三方平台 比如 twitter fb WhatsApp 等应用接入的通用展示数据
+    openGraph: {
+        title: "Meditation Benefits", // 同上
+        description: "Discover the numerous benefits of meditation for stress management and overall well-being", // 同上
+        // 推荐 至少使用images,images 配置是用户在社交媒体打开网页时，所展现的图文  如果不想特殊定义 保持和 coverImage 一样也可
+        images: ['/images/articles/meditation.jpg'],
+        type: "website",
+    },
+};
+
 export default function MeditationBenefits() {
     const article = {
         id: 'meditation-benefits',

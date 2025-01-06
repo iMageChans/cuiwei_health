@@ -21,19 +21,7 @@ export const metadata = {
     title: "High Heart Rate", // 同上
     description: "Understanding and managing elevated heart rate", // 同上
     // 推荐 至少使用images,images 配置是用户在社交媒体打开网页时，所展现的图文  如果不想特殊定义 保持和 coverImage 一样也可
-    images: [
-      {
-        url: "https://nextjs.org/og.png", // Must be an absolute URL
-        width: 800,
-        height: 600,
-      },
-      {
-        url: "https://nextjs.org/og-alt.png", // Must be an absolute URL
-        width: 1800,
-        height: 1600,
-        alt: "My custom alt",
-      },
-    ],
+    images: ['/images/articles/article2.png'],
     type: "website",
   },
 };
