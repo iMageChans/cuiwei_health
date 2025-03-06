@@ -12,6 +12,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@next/third-parties": "^15.2.1",
         "framer-motion": "^10.18.0",
         "next": "^14.0.4",
         "next-seo": "^6.6.0",
