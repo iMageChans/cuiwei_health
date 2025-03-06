@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://pulseheath.com/
+Host: https://heartwellness.app/
 
 # Sitemaps
-Sitemap: https://pulseheath.com/sitemap.xml
+Sitemap: https://heartwellness.app/sitemap.xml
