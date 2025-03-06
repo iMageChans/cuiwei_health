@@ -1,4 +1,3 @@
-'use client'
 
 import ArticleLayout from '../../../components/ArticleLayout'
 import Image from 'next/image'

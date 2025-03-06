@@ -71,3 +71,18 @@ GA 的参考指标 着陆页,合理的区分用户是从哪个页面访问，以
 ![image](https://github.com/user-attachments/assets/c866573f-f6be-4930-9be9-296dad03ae0c)
 
 - https://search.google.com 重要参考 编排索引等数据查看
+
+## 部署方式
+
+```bash
+
+# 不清楚你们使用的守护进程工具是什么 这个你们按需处理既可
+
+# 安装代码
+npm install -f
+npm run build
+
+# 启动代码
+npm start
+
+```
