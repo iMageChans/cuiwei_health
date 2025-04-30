@@ -4,7 +4,7 @@
     "description": "监控项目",
     "main": "index.js",
     "scripts": {
-        "build": "next build",
+        "build": "next build && next-sitemap",
         "dev": "next dev",
         "start": "next start",
         "postbuild": "next-sitemap"
@@ -13,19 +13,22 @@
     "license": "ISC",
     "dependencies": {
         "@next/third-parties": "^15.2.1",
+        "antd": "^5.24.6",
+        "axios": "^1.8.4",
         "framer-motion": "^10.18.0",
+        "moment": "^2.30.1",
         "next": "^14.0.4",
-        "next-seo": "^6.6.0",
         "next-sitemap": "^4.2.3",
         "progress-bar-webpack-plugin": "^2.1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-usestateref": "^1.0.9",
         "schema-dts": "^1.1.2"
     },
     "devDependencies": {
         "@types/node": "22.10.2",
-        "@types/react": "19.0.2",
-        "@types/react-dom": "^18.2.0",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.2",
         "autoprefixer": "^10.4.16",
         "postcss": "^8.4.33",
         "tailwindcss": "^3.4.1",

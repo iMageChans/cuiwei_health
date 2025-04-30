@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     template: '%s | Impulse',
     default: 'Impulse - Your Heart Health Companion'
   },
+  icons: {
+    icon: '/logo.png',
+  },
   description: 'Monitor your heart rate, track your health, and improve your wellbeing with Impulse.',
   openGraph: {
     title: 'Impulse - Your Heart Health Companion',

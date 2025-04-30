@@ -1,14 +1,4 @@
-# 构建阶段
-FROM node:18-alpine AS builder
-
-WORKDIR /app
-COPY package*.json ./
-# 添加 legacy-peer-deps 参数解决版本冲突
-RUN npm ci --include=dev --legacy-peer-deps
-COPY . .
-RUN npm run build
-
-# 生产镜像
+# 本地生产环境 Dockerfile
 FROM node:18-alpine
 
 WORKDIR /app
@@ -16,16 +6,23 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# 复制 package.json 并安装依赖
+COPY package*.json ./
+RUN npm ci --omit=dev --legacy-peer-deps
+
+# 构建应用（在容器启动时会执行）
+# 注意：实际文件会通过卷映射提供，这里不需要 COPY
+
+# 添加用户（可选，如果你想以非 root 用户运行）
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
 
-COPY --from=builder --chown=nextjs:nodejs /app/package*.json ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+# 设置权限
+RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# 启动前先构建
+CMD ["sh", "-c", "npm run build && npm start"]

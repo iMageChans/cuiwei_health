@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 services:
   nextapp:
@@ -7,6 +7,18 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=production # 生产环境
     restart: unless-stopped
-    # 按需添加volume
+    volumes:
+      # 映射应用程序代码
+      - ./:/app
+      # 映射 node_modules 到匿名卷
+      - /app/node_modules
+      # 映射 .next 目录到匿名卷，防止本地开发环境的 .next 覆盖容器内的
+      - /app/.next
+      # 映射 sitemap 文件到物理机指定路径
+      - ./public/sitemap.xml:/www/ClipNote/sitemap.xml
+      - ./public/sitemap-0.xml:/www/ClipNote/sitemap-0.xml
+    working_dir: /app
+    command: npm run start # 使用生产模式启动
+    # 按需添加其他 volume

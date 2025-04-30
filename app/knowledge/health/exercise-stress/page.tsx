@@ -1,6 +1,5 @@
 
 import ArticleLayout from '../../../components/ArticleLayout'
-import Image from 'next/image'
 
 
 
@@ -65,7 +64,7 @@ export default function ExerciseAndStress() {
 
     return (
         <ArticleLayout {...article}>
-            <div className="prose prose-lg max-w-none">
+            {/* <div className="prose prose-lg max-w-none">
                 <div id="introduction" className="space-y-4">
                     <p className="text-xl text-gray-600 leading-relaxed">
                         Exercise is one of the most effective natural stress relievers. When you exercise, your body releases endorphins, which are natural mood lifters, and helps regulate stress hormones like cortisol and adrenaline.
@@ -281,7 +280,8 @@ export default function ExerciseAndStress() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <div>ss</div>
         </ArticleLayout>
     )
 } 

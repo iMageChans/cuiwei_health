@@ -1,6 +1,3 @@
-import type { Metadata } from 'next'
-import { ArticleJsonLd } from 'next-seo';
-
 import ArticleLayout from '../../../components/ArticleLayout'
 import Image from 'next/image'
 
