@@ -10,7 +10,7 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     volumes:
-      # 映射 sitemap 文件到物理机指定路径
-      - ./public/sitemap.xml:/www/ClipNote/sitemap.xml
-      - ./public/sitemap-0.xml:/www/ClipNote/sitemap-0.xml
+      # 从主机映射到容器（注意方向反转了）
+      - /www/ClipNote/sitemap.xml:/app/public/sitemap.xml
+      - /www/ClipNote/sitemap-0.xml:/app/public/sitemap-0.xml
     # 按需添加volume
