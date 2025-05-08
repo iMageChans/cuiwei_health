@@ -10,21 +10,13 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     volumes:
-      # 确保主机上的文件存在
+      # 从主机映射到容器
       - /www/ClipNote/sitemap.xml:/app/public/sitemap.xml
       - /www/ClipNote/sitemap-0.xml:/app/public/sitemap-0.xml
-      # 添加应用程序代码映射（如果需要）
+      # 添加应用程序代码映射
       - ./:/app
-      # 防止覆盖 node_modules
+      # 防止覆盖 node_modules 和 .next
       - /app/node_modules
-      # 防止覆盖 .next 目录
       - /app/.next
     working_dir: /app
-    # 添加启动命令，确保文件存在
-    command: >
-      sh -c "
-        ls -la /app/public/sitemap*.xml &&
-        cat /app/public/sitemap*.xml &&
-        npm run start
-      "
-    # 按需添加volume
+    command: npm run start
