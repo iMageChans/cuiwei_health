@@ -12,7 +12,7 @@ services:
     volumes:
       # 从主机映射到容器
       - /www/ClipNote/sitemap.xml:/app/public/sitemap.xml
-      - /www/ClipNote/sitemap-0.xml:/app/public/sitemap-0.xml
+      - /www/ClipNote/sitemap-knowledge.xml:/app/public/sitemap-knowledge.xml
       # 添加应用程序代码映射
       - ./:/app
       # 防止覆盖 node_modules 和 .next
