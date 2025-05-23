@@ -1,10 +1,9 @@
-import { Flex, Space, Image } from 'antd'
 import Link from 'next/link'
 
 export default function NotFound() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-8 h-screen px-10">
-      <Image preview={false} className='max-w-xs xl:max-w-sm xl:mt-20' src='/404.png' />
+      <img loading='lazy' className='max-w-xs xl:max-w-sm xl:mt-20' src='/404.png' />
       <div className='xl:mt-8'>
         <h1 style={{ color: '#000000'}} className="text-2xl xl:text-5xl font-bold xl:mb-6">
         Oops!<br />

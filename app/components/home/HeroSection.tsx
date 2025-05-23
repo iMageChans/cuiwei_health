@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import HeartRateMonitor from './HeartRateMonitor'
 import TrustIndicators from './TrustIndicators'
@@ -37,92 +36,45 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
-      {/* 背景装饰 */}
-      {/* <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-red-100 rounded-full 
-            filter blur-3xl opacity-30">
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
-        </motion.div>
-      </div> */}
-
       {/* 主要内容 */}
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center pt-24 md:pt-32">
           {/* 标题文本 */}
           <div className="text-4xl md:text-6xl font-bold text-gray-900 mb-8">
-            <motion.h1
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              custom={0}
-            >
+            <h1>
               Monitor Your Heart.{' '}
               <span className="text-red-500">Improve Your Health.</span>
-            </motion.h1>
+            </h1>
           </div>
 
           {/* 描述文本 */}
           <div className="text-xl text-gray-600 mb-12">
-            <motion.span
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              custom={1}
-            >
+            <span>
               Track your heart rate, understand your body, and make informed decisions
               about your health with our advanced monitoring tools.
-            </motion.span>
+            </span>
           </div>
 
           {/* 心跳监测器 */}
           <div className="w-full max-w-lg mx-auto mb-12">
-              <HeartRateMonitor bpm={bpm} />
+            <HeartRateMonitor bpm={bpm} />
           </div>
 
           {/* 按钮组 */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <motion.div
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              custom={3}
-            >
-              <Link
-                href="https://apps.apple.com/gb/app/impulse-heart-rate-monitor/id6465695370"
-                className="group bg-red-500 text-white px-8 py-4 rounded-xl font-semibold 
+            <Link
+              href="https://apps.apple.com/gb/app/impulse-heart-rate-monitor/id6465695370"
+              className="group bg-red-500 text-white px-8 py-4 rounded-xl font-semibold 
                          hover:bg-red-600 transition-all duration-300 transform hover:scale-105
                          flex items-center justify-center gap-2 relative"
-                target="_blank"
-                rel='nofollow noopener noreferrer'
-              >
-                <svg className="w-6 h-6" viewBox="0 0 384 512" fill="currentColor">
-                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
-                </svg>
-                <span>Download App</span>
-                <div className="absolute inset-0 rounded-xl bg-white/20">
-                  <motion.div
-                    initial={false}
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                  />
-                </div>
-              </Link>
-            </motion.div>
+              target="_blank"
+              rel='nofollow noopener noreferrer'
+            >
+              <svg className="w-6 h-6" viewBox="0 0 384 512" fill="currentColor">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+              </svg>
+              <span>Download App</span>
+            </Link>
 
             {/* Learn More 按钮 */}
             <Link
@@ -141,14 +93,7 @@ export default function HeroSection() {
 
           {/* Trust Indicators */}
           <div>
-            <motion.div
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              custom={4}
-            >
-              <TrustIndicators />
-            </motion.div>
+            <TrustIndicators />
           </div>
         </div>
       </div>

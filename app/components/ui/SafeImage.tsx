@@ -42,6 +42,7 @@ export default function SafeImage({
           title={alt}
           loading='lazy'
           width={362}
+          fetchPriority='low'
           height={192}
           className={`
           transition-opacity duration-300

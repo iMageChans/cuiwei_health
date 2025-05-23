@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Image } from 'antd'
 
 const stories = [
   {
@@ -74,13 +73,13 @@ export default function UserStories() {
                   <div className="relative">
                     <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 relative z-10">
                       <div className="relative w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6">
-                        <Image
+                        <img
                           src={story.image}
                           alt={story.name}
-                          preview={false}
                           width={'100%'}
                           height={'100%'}
                           loading='lazy'
+                          fetchPriority='low'
                           className="rounded-full"
                           sizes="(max-width: 768px) 64px, 80px"
                         />
