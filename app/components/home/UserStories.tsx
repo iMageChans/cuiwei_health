@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import { Image } from 'antd'
 
 const stories = [
   {
@@ -77,8 +77,10 @@ export default function UserStories() {
                         <Image
                           src={story.image}
                           alt={story.name}
-                          fill
-                          className="object-cover rounded-full"
+                          preview={false}
+                          width={'100%'}
+                          height={'100%'}
+                          className="rounded-full"
                           sizes="(max-width: 768px) 64px, 80px"
                         />
                       </div>

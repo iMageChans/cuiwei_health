@@ -25,8 +25,10 @@ export function ToolCard({
           <Image
             src={image}
             alt={imageAlt}
+            title={imageAlt}
             width={400}
             height={300}
+            loading='lazy'
             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
           />
         </div>

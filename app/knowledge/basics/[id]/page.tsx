@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import SafeImage from '../../../components/ui/SafeImage'
 
 type Formula = {
     type: 'formula'

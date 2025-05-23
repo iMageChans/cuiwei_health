@@ -35,10 +35,11 @@ export default function Navigation() {
             <Image
               src="/logo.png"
               alt="Impulse Logo"
+              loading="lazy"
+              title="Impulse Logo"
               width={32}
               height={32}
               className="w-10 h-10 object-contain rounded-lg"
-              priority
             />
             <div className="nav-logo-text-container">
               <span className="nav-logo-text">Impulse</span>
@@ -88,8 +89,11 @@ export default function Navigation() {
                 <div className="relative w-32 h-32">
                   <Image
                     src="/tools/qr-code.png"
-                    alt="Download Impulse App"
-                    fill
+                    alt="Download Impulse App Qr Code"
+                    loading="lazy"
+                    title="Download Impulse App Qr Code"
+                    width={128}
+                    height={128}
                     className="rounded-xl"
                   />
                 </div>
@@ -138,7 +142,7 @@ export default function Navigation() {
       <a
         href="https://apps.apple.com/app/id6465695370"
         target="_blank"
-        rel="noopener noreferrer"
+        rel='nofollow noopener noreferrer'
         className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 nav-download-mobile"
       >
         Download App

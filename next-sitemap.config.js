@@ -8,13 +8,17 @@ module.exports = {
   autoLastmod: true, // 自动更新最后修改时间
   additionalPaths: async (config) => {
     try {
-      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/articles/?page=1&page_size=20`);
-      return data.results.map(item => ({
-        loc: `/knowledge/${item.id}`,
-        changefreq: 'daily',
-        priority: 0.9,
-        lastmod: new Date().toISOString()
-      }));
+      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/articles/list/?page=1&page_size=20`);
+      return data.map(item => {
+        return {
+          loc: `/knowledge/${item.id}`,
+          changefreq: 'daily',
+          priority: 0.9,
+          lastmod: new Date().toISOString(),
+          _sitemap:'/sitemap-knowledge.xml'
+        }
+      });
+
     } catch (error) {
       return [];
     }
@@ -26,3 +30,7 @@ module.exports = {
     ]
   }
 };
+
+
+// package.json加入下面的内容生成sitemap
+       //"postbuild": "next-sitemap"

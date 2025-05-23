@@ -4,10 +4,9 @@
     "description": "监控项目",
     "main": "index.js",
     "scripts": {
-        "build": "next build && next-sitemap",
+        "build": "next build",
         "dev": "next dev",
-        "start": "next start",
-        "postbuild": "next-sitemap"
+        "start": "next start"
     },
     "author": "",
     "license": "ISC",
