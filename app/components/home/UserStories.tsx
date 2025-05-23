@@ -80,6 +80,7 @@ export default function UserStories() {
                           preview={false}
                           width={'100%'}
                           height={'100%'}
+                          loading='lazy'
                           className="rounded-full"
                           sizes="(max-width: 768px) 64px, 80px"
                         />

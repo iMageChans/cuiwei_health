@@ -78,15 +78,15 @@ export default function HeroSection() {
 
           {/* 描述文本 */}
           <div className="text-xl text-gray-600 mb-12">
-            <motion.span
+            {/* <motion.span
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
               custom={1}
-            >
+            > */}
               Track your heart rate, understand your body, and make informed decisions
               about your health with our advanced monitoring tools.
-            </motion.span>
+            {/* </motion.span> */}
           </div>
 
           {/* 心跳监测器 */}
