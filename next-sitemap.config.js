@@ -14,9 +14,8 @@ module.exports = {
           loc: `/knowledge/${item.id}`,
           changefreq: 'daily',
           priority: 0.9,
-          lastmod: new Date().toISOString(),
-          _sitemap:'/sitemap-knowledge.xml'
-        }
+          lastmod: new Date().toISOString()
+                }
       });
 
     } catch (error) {
@@ -34,3 +33,4 @@ module.exports = {
 
 // package.json加入下面的内容生成sitemap
        //"postbuild": "next-sitemap"
+        // "next-sitemap": "^4.2.3",

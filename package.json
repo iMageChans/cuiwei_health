@@ -8,8 +8,6 @@
         "dev": "next dev",
         "start": "next start"
     },
-    "author": "",
-    "license": "ISC",
     "dependencies": {
         "@next/third-parties": "^15.2.1",
         "antd": "^5.24.6",
@@ -17,12 +15,11 @@
         "framer-motion": "^12.12.1",
         "moment": "^2.30.1",
         "next": "^14.0.4",
-        "next-sitemap": "^4.2.3",
         "progress-bar-webpack-plugin": "^2.1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-usestateref": "^1.0.9",
-        "schema-dts": "^1.1.2"
+        "schema-dts": "^1.1.5",
+        "sharp": "^0.34.2"
     },
     "devDependencies": {
         "@types/node": "22.10.2",
