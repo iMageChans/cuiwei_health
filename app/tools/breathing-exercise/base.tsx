@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 // 4-7-8 呼吸法
@@ -100,7 +100,7 @@ export default function BreathingExerciseBasePage() {
 
               {/* 指导文字 */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                <AnimatePresence mode="wait">
+                {/* <AnimatePresence mode="wait"> */}
                   {!isStarted ? (
                     <div className="space-y-6">
                       <motion.div
@@ -140,7 +140,7 @@ export default function BreathingExerciseBasePage() {
                       </motion.div>
                     </div>
                   )}
-                </AnimatePresence>
+                {/* </AnimatePresence> */}
               </div>
             </div>
           </div>

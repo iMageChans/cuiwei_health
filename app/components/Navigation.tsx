@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -48,23 +47,24 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="nav-links">
-            <Link href="/" className={`nav-link ${pathname === '/' ? 'active' : ''}`}>
-              Home
-            </Link>
-            <Link href="/knowledge" className={`nav-link ${pathname.startsWith('/knowledge') ? 'active' : ''}`}>
-              Health Knowledge
-            </Link>
-            <Link href="/tools" className={`nav-link ${pathname.startsWith('/tools') ? 'active' : ''}`}>
-              Health Tools
-            </Link>
-            <Link href="/stories" className={`nav-link ${pathname.startsWith('/stories') ? 'active' : ''}`}>
-              Voices That Inspire
-            </Link>
-            <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>
-              About Us
-            </Link>
-          </div>
+          {
+            !isMobileMenuOpen ? <div className="nav-links">
+              <Link href="/" className={`nav-link ${pathname === '/' ? 'active' : ''}`}>
+                Home
+              </Link>
+              <Link href="/knowledge" className={`nav-link ${pathname.startsWith('/knowledge') ? 'active' : ''}`}>
+                Health Knowledge
+              </Link>
+              <Link href="/tools" className={`nav-link ${pathname.startsWith('/tools') ? 'active' : ''}`}>
+                Health Tools
+              </Link>
+              <Link href="/stories" className={`nav-link ${pathname.startsWith('/stories') ? 'active' : ''}`}>
+                Voices That Inspire
+              </Link>
+              <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>
+                About Us
+              </Link>
+            </div> : null}
 
           {/* Download Button & QR Code */}
           <div className="relative">
@@ -119,34 +119,38 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`nav-mobile-menu ${isMobileMenuOpen ? 'open' : 'hidden lg:gap-x-12'}`}>
-          <Link href="/" className={`nav-mobile-link ${pathname === '/' ? 'active' : ''}`}>
-            Home
-          </Link>
-          <Link href="/knowledge" className={`nav-mobile-link ${pathname.startsWith('/knowledge') ? 'active' : ''}`}>
-            Health Knowledge
-          </Link>
-          <Link href="/tools" className={`nav-mobile-link ${pathname.startsWith('/tools') ? 'active' : ''}`}>
-            Health Tools
-          </Link>
-          <Link href="/stories" className={`nav-mobile-link ${pathname.startsWith('/stories') ? 'active' : ''}`}>
-            Voices That Inspire
-          </Link>
-          <Link href="/about" className={`nav-mobile-link ${pathname === '/about' ? 'active' : ''}`}>
-            About Us
-          </Link>
-        </div>
+        {
+          isMobileMenuOpen ? <div className={`nav-mobile-menu ${isMobileMenuOpen ? 'open' : 'hidden lg:gap-x-12'}`}>
+            <Link href="/" className={`nav-mobile-link ${pathname === '/' ? 'active' : ''}`}>
+              Home
+            </Link>
+            <Link href="/knowledge" className={`nav-mobile-link ${pathname.startsWith('/knowledge') ? 'active' : ''}`}>
+              Health Knowledge
+            </Link>
+            <Link href="/tools" className={`nav-mobile-link ${pathname.startsWith('/tools') ? 'active' : ''}`}>
+              Health Tools
+            </Link>
+            <Link href="/stories" className={`nav-mobile-link ${pathname.startsWith('/stories') ? 'active' : ''}`}>
+              Voices That Inspire
+            </Link>
+            <Link href="/about" className={`nav-mobile-link ${pathname === '/about' ? 'active' : ''}`}>
+              About Us
+            </Link>
+          </div> : null
+        }
       </nav>
 
       {/* Mobile Download Button */}
-      <a
-        href="https://apps.apple.com/app/id6465695370"
-        target="_blank"
-        rel='nofollow noopener noreferrer'
-        className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 nav-download-mobile"
-      >
-        Download App
-      </a>
+      {
+        isMobileMenuOpen ? <a
+          href="https://apps.apple.com/app/id6465695370"
+          target="_blank"
+          rel='nofollow noopener noreferrer'
+          className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 nav-download-mobile"
+        >
+          Download App
+        </a> : null
+      }
 
       {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (

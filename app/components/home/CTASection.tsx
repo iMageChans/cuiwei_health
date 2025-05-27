@@ -17,7 +17,7 @@ export default function CTASection() {
                      hover:bg-gray-100 transition-all duration-300 transform hover:scale-105
                      inline-flex items-center gap-2"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
             <span>Download Now</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

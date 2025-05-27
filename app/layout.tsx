@@ -1,9 +1,9 @@
 import { Inter } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+// import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
-import React from 'react'
+import dynamic from 'next/dynamic'
+const Navigation = dynamic(() => import('./components/Navigation'));
+const Footer = dynamic(() => import('./components/Footer'));
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,7 +14,7 @@ const inter = Inter({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: any
 }) {
   return (
     <html lang="en" className={inter.variable}>
@@ -24,7 +24,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <GoogleAnalytics gaId='G-2F6DSS9TDZ' />
+        {/* <GoogleAnalytics gaId='G-2F6DSS9TDZ' /> */}
       </body>
     </html>
   )

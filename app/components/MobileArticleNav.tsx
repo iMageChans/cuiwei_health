@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -44,7 +44,7 @@ export default function MobileArticleNav({ tableOfContents, currentSection }: Mo
             </div>
 
             {/* 目录抽屉 */}
-            <AnimatePresence>
+            {/* <AnimatePresence> */}
                 {isOpen && (
                     <>
                         {/* 背景遮罩 */}
@@ -105,7 +105,7 @@ export default function MobileArticleNav({ tableOfContents, currentSection }: Mo
                         </div>
                     </>
                 )}
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
         </>
     )
 } 

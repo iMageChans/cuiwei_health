@@ -1,22 +1,22 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const stories = [
   {
     id: 1,
     name: 'Sarah',
     role: 'Yoga Instructor',
-    image: '/images/stories/sarah.jpg',
-    quote: 'Using Impulse helped me optimize my training intensity. I can now train smarter, not just harder.',
+    image: '/images/authors/author10.jpg',
+    quote: 'Using Impulse helped me optimize my training intensity. I can now train smarter, not just harder .',
     achievement: 'Improved race time by 12%'
   },
   {
     id: 2,
     name: 'Michael',
     role: 'Marathon Runner',
-    image: '/images/stories/michael.jpg',
+    image: '/images/authors/author13.jpg',
     quote: 'The breathing exercises have become an essential part of my daily routine and my students love them too.',
     achievement: 'Reduced stress levels significantly'
   },
@@ -24,7 +24,7 @@ const stories = [
     id: 3,
     name: 'Emma',
     role: 'Busy Professional',
-    image: '/images/stories/emma.jpg',
+    image: '/images/authors/author12.jpg',
     quote: 'I never realized how much my daily stress affected my heart rate. Now I can manage it better.',
     achievement: 'Better work-life balance'
   }
@@ -61,7 +61,7 @@ export default function UserStories() {
         {/* 故事卡片网格 */}
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <AnimatePresence mode="wait">
+            {/* <AnimatePresence mode="wait"> */}
               {visibleStories.map((story, index) => (
                 <motion.div
                   key={story.id}
@@ -116,7 +116,7 @@ export default function UserStories() {
                   </div>
                 </motion.div>
               ))}
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
           </div>
 
           {/* 分页指示器 */}

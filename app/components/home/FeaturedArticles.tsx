@@ -1,7 +1,8 @@
 'use client'
 
-import SafeImage from '../ui/SafeImage'
+import dynamic from 'next/dynamic';
 import Link from 'next/link'
+const SafeImage = dynamic(() => import('../ui/SafeImage'));
 
 const articles = [
   {

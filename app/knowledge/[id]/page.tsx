@@ -2,6 +2,7 @@
 
 import NotFound from "@/app/not-found";
 import axios from "axios";
+import { redirect } from 'next/navigation';
 
 export async function generateMetadata({ params }: any) {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://heartwellness.app'; // 你可以设置一个默认值
@@ -53,17 +54,21 @@ export async function generateMetadata({ params }: any) {
         return {}
     }
 }
-
 export default async function ArticleDetails({ params }: any) {
 
+
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://heartwellness.app'; // 你可以设置一个默认值
-    let data = { content: '' }
+    let data: any = { content: '' }
     try {
         const res = await axios.get(apiUrl + `/api/articles/${params.id}/`)
         console.log(`这是获取的数据${JSON.stringify(res.data)}`)
         data = res.data
     } catch (error) { }
-
+    const isNumber = /^\d+(\.\d+)?$/.test(params.id);
+    console.log(`是否是数字${isNumber&&data.slug}`)
+    if (isNumber&&data.slug) {
+        redirect(`/knowledge/${data.slug}`)
+    }
     return (
         <>
             {data.content ? <div className="max-w-7xl mx-auto min-h-7xl py-28 px-4 sm:px-6 lg:px-8">

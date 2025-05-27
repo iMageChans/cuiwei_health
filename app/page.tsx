@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
-import HeroSection from './components/home/HeroSection'
-import FeaturedArticles from './components/home/FeaturedArticles'
-import UserStories from './components/home/UserStories'
-import CTASection from './components/home/CTASection'
+import dynamic from 'next/dynamic'
+const HeroSection = dynamic(() => import('./components/home/HeroSection'));
+const FeaturedArticles = dynamic(() => import('./components/home/FeaturedArticles'));
+const UserStories = dynamic(() => import('./components/home/UserStories'));
+const CTASection = dynamic(() => import('./components/home/CTASection'));
 
 export const metadata: Metadata = {
   title: 'Impulse - #1 Heart Rate Monitor & Heartbeat Tracker',

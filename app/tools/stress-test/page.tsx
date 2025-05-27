@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 interface Question {
@@ -161,7 +161,7 @@ export default function StressTestPage() {
         </div>
 
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait"> */}
             {!showResults ? (
               <div className="p-8">
                 <motion.div
@@ -302,7 +302,7 @@ export default function StressTestPage() {
                 </motion.div>
               </div>
             )}
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
         </div>
       </div>
     </main>

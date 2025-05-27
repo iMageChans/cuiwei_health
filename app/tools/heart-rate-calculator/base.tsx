@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -167,7 +167,7 @@ export default function HeartRateCalculatorBase() {
         </div>
 
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait"> */}
             {!showResults ? (
               <div className="p-8">
                 <motion.div
@@ -405,7 +405,7 @@ export default function HeartRateCalculatorBase() {
                 </motion.div>
               </div>
             )}
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
         </div>
       </div>
     </main>

@@ -1,8 +1,7 @@
 'use client'
 import { Divider, Flex, List, Image } from 'antd'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import useStateRef from 'react-usestateref';
 import moment from 'moment';
 import Link from 'next/link';
 
@@ -19,23 +18,23 @@ interface Article {
 }
 
 export default function KnowledgeBase() {
-  const [, setBaseData, baseDataRef] = useStateRef<Article[]>([]);
+  const [baseData, setBaseData] = useState<Article[]>([]);
 
-  const [, setPage, pageRef] = useStateRef(1);
-  const [, setTotal, totalRef] = useStateRef(0);
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://heartwellness.app'; // 你可以设置一个默认值
-    if (pageRef.current === 1) setBaseData([]);
+    if (page === 1) setBaseData([]);
     // 发送 GET 请求
-    axios.get(apiUrl + `/api/articles/list/?page=${pageRef.current}&page_size=10`)
+    axios.get(apiUrl + `/api/articles/list/?page=${page}&page_size=10`)
       .then(response => {
         const data: { count: number, results: Article[] } = response.data;
         setTotal(data.count);
-        if (pageRef.current === 1) {
+        if (page === 1) {
           setBaseData([...data.results]);
         } else {
-          setBaseData([...baseDataRef.current, ...data.results]);
+          setBaseData([...baseData, ...data.results]);
         }
         // 处理成功响应
         console.log('数据:', data.results);
@@ -45,7 +44,7 @@ export default function KnowledgeBase() {
         console.error('错误:', error);
       });
 
-  }, [pageRef.current]);
+  }, [page]);
 
   useEffect(() => {
 
@@ -55,8 +54,8 @@ export default function KnowledgeBase() {
       entries.forEach(entry => {
         // 检查元素是否在可视区域
         if (entry.isIntersecting) {
-          if (totalRef.current > baseDataRef.current.length && baseDataRef.current.length !== 0) {
-            setPage(pageRef.current + 1);
+          if (total > baseData.length && baseData.length !== 0) {
+            setPage(page + 1);
           }
         }
       });
@@ -72,7 +71,7 @@ export default function KnowledgeBase() {
         observer.unobserve(targetElement);
       }
     };
-  }, [baseDataRef.current]);
+  }, [baseData]);
 
 
   return (
@@ -89,7 +88,7 @@ export default function KnowledgeBase() {
                 LASTEST UPDATE
               </h2>
               <List
-                dataSource={baseDataRef.current}
+                dataSource={baseData}
                 renderItem={(item) => (
                   <Link href={`/knowledge/${item.slug_keyword}`} key={item.id}>
                     <List.Item className='bg-white p-2 md:p-3 lg:p-4 w-full h-28 md:h-32 lg:h-40'>

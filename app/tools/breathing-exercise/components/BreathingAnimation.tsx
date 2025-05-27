@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { BreathingState, BreathingPattern } from '../types'
 
 interface Props {
@@ -85,7 +85,7 @@ export default function BreathingAnimation({ state, pattern, mindfulnessPrompts 
         </div>
 
         {/* 正念提示文字 */}
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait"> */}
           <div className="text-center px-6 text-sm font-light tracking-wide text-white/90">
             <motion.div
               key={state.phase}
@@ -96,7 +96,7 @@ export default function BreathingAnimation({ state, pattern, mindfulnessPrompts 
               {getCurrentPrompt()}
             </motion.div>
           </div>
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
       </div>
 
       {/* 装饰性粒子效果 */}

@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import HeartRateMonitor from './HeartRateMonitor'
-import TrustIndicators from './TrustIndicators'
+import dynamic from 'next/dynamic'
+const HeartRateMonitor = dynamic(() => import('./HeartRateMonitor'));
+const TrustIndicators = dynamic(() => import('./TrustIndicators'));
 
 
 export default function HeroSection() {
@@ -20,19 +21,6 @@ export default function HeroSection() {
     const interval = setInterval(updateBpm, 1000)
     return () => clearInterval(interval)
   }, [updateBpm])
-
-  // 定义统一的动画变体
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: custom * 0.2,
-      }
-    })
-  }
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
