@@ -1,14 +1,3 @@
-# 构建阶段
-FROM node:18-alpine AS builder
-
-WORKDIR /app
-COPY package*.json ./
-# 使用 npm install 而不是 npm ci
-RUN npm install --legacy-peer-deps
-COPY . .
-RUN npm run build
-
-# 生产镜像
 FROM node:18-alpine
 
 WORKDIR /app
@@ -16,16 +5,21 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
+# 安装依赖（注意：实际文件会通过卷映射提供）
+COPY package*.json ./
+RUN npm install --legacy-peer-deps
 
-COPY --from=builder --chown=nextjs:nodejs /app/package*.json ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+# 不需要复制源文件，因为会通过卷映射提供
+# 不需要构建，直接运行
+
+# 设置用户（可选）
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs && \
+    chown -R nextjs:nodejs /app
 
 USER nextjs
 
 EXPOSE 3000
 
+# 直接启动应用
 CMD ["npm", "start"]
