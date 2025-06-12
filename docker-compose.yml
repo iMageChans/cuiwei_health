@@ -4,6 +4,9 @@ services:
   nextapp:
     build: .
     container_name: next_app
+    volumes:
+      - /www/ClipNote/sitemap.xml:/app/public/sitemap.xml
+      - /www/ClipNote/sitemap-knowledge.xml:/app/public/sitemap-knowledge.xml
     ports:
       - "3000:3000"
     environment:
