@@ -1,9 +1,9 @@
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+// import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
+import dynamic from 'next/dynamic'
+const Navigation = dynamic(() => import('./components/Navigation'));
+const Footer = dynamic(() => import('./components/Footer'));
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,38 +11,10 @@ const inter = Inter({
   variable: '--font-inter'
 })
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Impulse',
-    default: 'Impulse - Your Heart Health Companion'
-  },
-  description: 'Monitor your heart rate, track your health, and improve your wellbeing with Impulse.',
-  openGraph: {
-    title: 'Impulse - Your Heart Health Companion',
-    description: 'Monitor your heart rate, track your health, and improve your wellbeing with Impulse.',
-    url: 'https://impulse.health',
-    siteName: 'Impulse',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Impulse Heart Rate Monitor'
-      }
-    ]
-  },
-  twitter: {
-    card: 'summary_large_image'
-  },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || 'https://impulse.health'
-  ),
-}
-
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: any
 }) {
   return (
     <html lang="en" className={inter.variable}>
@@ -52,7 +24,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <GoogleAnalytics gaId='G-2F6DSS9TDZ' />
+        {/* <GoogleAnalytics gaId='G-2F6DSS9TDZ' /> */}
       </body>
     </html>
   )

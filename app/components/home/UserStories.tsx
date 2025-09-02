@@ -1,23 +1,22 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const stories = [
   {
     id: 1,
     name: 'Sarah',
     role: 'Yoga Instructor',
-    image: '/images/stories/sarah.jpg',
-    quote: 'Using Impulse helped me optimize my training intensity. I can now train smarter, not just harder.',
+    image: '/images/authors/author10.jpg',
+    quote: 'Using Impulse helped me optimize my training intensity. I can now train smarter, not just harder .',
     achievement: 'Improved race time by 12%'
   },
   {
     id: 2,
     name: 'Michael',
     role: 'Marathon Runner',
-    image: '/images/stories/michael.jpg',
+    image: '/images/authors/author13.jpg',
     quote: 'The breathing exercises have become an essential part of my daily routine and my students love them too.',
     achievement: 'Reduced stress levels significantly'
   },
@@ -25,7 +24,7 @@ const stories = [
     id: 3,
     name: 'Emma',
     role: 'Busy Professional',
-    image: '/images/stories/emma.jpg',
+    image: '/images/authors/author12.jpg',
     quote: 'I never realized how much my daily stress affected my heart rate. Now I can manage it better.',
     achievement: 'Better work-life balance'
   }
@@ -62,7 +61,7 @@ export default function UserStories() {
         {/* 故事卡片网格 */}
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <AnimatePresence mode="wait">
+            {/* <AnimatePresence mode="wait"> */}
               {visibleStories.map((story, index) => (
                 <motion.div
                   key={story.id}
@@ -74,11 +73,14 @@ export default function UserStories() {
                   <div className="relative">
                     <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 relative z-10">
                       <div className="relative w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6">
-                        <Image
+                        <img
                           src={story.image}
                           alt={story.name}
-                          fill
-                          className="object-cover rounded-full"
+                          width={'100%'}
+                          height={'100%'}
+                          loading='lazy'
+                          fetchPriority='low'
+                          className="rounded-full"
                           sizes="(max-width: 768px) 64px, 80px"
                         />
                       </div>
@@ -114,7 +116,7 @@ export default function UserStories() {
                   </div>
                 </motion.div>
               ))}
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
           </div>
 
           {/* 分页指示器 */}

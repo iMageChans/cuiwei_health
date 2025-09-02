@@ -35,23 +35,30 @@ export default function SafeImage({
 
   return (
     <div className="relative w-full h-full">
-      <Image
-        src={error ? (fallbackSrc || defaultFallback) : src}
-        alt={alt}
-        className={`
+      <div className="relative w-full h-48" style={{ overflow: 'hidden' }}>
+        <Image
+          src={error ? (fallbackSrc || defaultFallback) : src}
+          alt={alt}
+          title={alt}
+          loading='lazy'
+          width={362}
+          fetchPriority='low'
+          height={192}
+          className={`
           transition-opacity duration-300
           ${isLoading ? 'opacity-0' : 'opacity-100'}
           ${className}
         `}
-        onError={() => {
-          setError(true)
-          setIsLoading(false)
-        }}
-        onLoad={() => {
-          setIsLoading(false)
-        }}
-        {...props}
-      />
+          onError={() => {
+            setError(true)
+            setIsLoading(false)
+          }}
+          onLoad={() => {
+            setIsLoading(false)
+          }}
+          {...props}
+        />
+      </div>
 
       {/* 加载状态 */}
       {isLoading && !error && (

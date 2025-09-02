@@ -1,3 +1,45 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'About Us | Impulse',
+  icons: {
+    icon: '/logo.png',
+  },
+  description: "Learn more about Impulse and our mission to provide innovative tools for heart health and wellness. We're dedicated to helping you live a healthier life.",
+  openGraph: {
+    title: 'About Us | Impulse',
+    description: "Learn more about Impulse and our mission to provide innovative tools for heart health and wellness. We're dedicated to helping you live a healthier life.",
+    url: 'https://heartwellness.app/about',
+    type: 'website',
+    images: [
+      {
+        url: 'https://heartwellness.app/open-graph.png',
+        width: 1200,
+        height: 630,
+        alt: 'Impulse Heart Rate Monitor',
+        type: 'photo',
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Impulse',
+    description: "Learn more about Impulse and our mission to provide innovative tools for heart health and wellness. We're dedicated to helping you live a healthier life.",
+    site: 'https://heartwellness.app/about',
+    images: [
+      {
+        url: 'https://heartwellness.app/open-graph.png',
+        width: 1200,
+        height: 630,
+        alt: 'Impulse Heart Rate Monitor',
+        type: 'photo'
+      }
+    ]
+  },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://heartwellness.app'
+  ),
+}
 export default function About() {
   return (
     <main className="min-h-screen pt-20 bg-gradient-to-b from-gray-50/80 via-white to-gray-50/90">

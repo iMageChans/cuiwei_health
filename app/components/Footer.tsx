@@ -3,7 +3,7 @@ import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id='footer-id' className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* Brand Section */}
@@ -16,6 +16,7 @@ export default function Footer() {
           <div className={styles.linksSection}>
             <h4 className={styles.sectionTitle}>Health Knowledge</h4>
             <ul className={styles.linksList}>
+              <li><Link href="/exercises">Exercise</Link></li>
               <li><Link href="/knowledge">Heart Rate Basics</Link></li>
               <li><Link href="/knowledge">Stress Management</Link></li>
               <li><Link href="/knowledge">Healthy Lifestyle</Link></li>
@@ -35,7 +36,7 @@ export default function Footer() {
             <h4 className={styles.sectionTitle}>About Us</h4>
             <ul className={styles.linksList}>
               <li><Link href="/about">Impulse Team</Link></li>
-              
+
             </ul>
           </div>
         </div>

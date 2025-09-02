@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://heartwellness.app/
+Host: https://heartwellness.app
 
 # Sitemaps
 Sitemap: https://heartwellness.app/sitemap.xml

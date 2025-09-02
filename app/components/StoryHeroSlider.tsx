@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from 'antd'
 
 const slides = [
   {
@@ -60,28 +61,30 @@ export default function StoryHeroSlider() {
   }
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto mb-16 animate-fade-in-up delay-300">
+    <div className="relative w-full max-w-6xl mx-auto md:mb-16 md:mt-12 animate-fade-in-up delay-300">
       {/* 主容器 */}
-      <div className="relative aspect-[21/9] rounded-3xl overflow-hidden bg-white shadow-xl">
+      <div className="relative aspect-[21/9] rounded-3xl overflow-hidden bg-white shadow-xl mx-4 md:mx-8">
         {/* 轮播图片 */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
               className={`absolute inset-0 transition-all duration-700 ease-in-out
-                        ${index === currentSlide 
-                          ? 'opacity-100 translate-x-0' 
-                          : index < currentSlide 
-                            ? 'opacity-0 -translate-x-full' 
-                            : 'opacity-0 translate-x-full'}`}
+                        ${index === currentSlide
+                  ? 'opacity-100 translate-x-0'
+                  : index < currentSlide
+                    ? 'opacity-0 -translate-x-full'
+                    : 'opacity-0 translate-x-full'}`}
             >
               <Image
                 src={slide.image}
                 alt={slide.alt}
-                fill
+                title={slide.alt}
+                preview={false}
+                width={'100%'}
+                height={'100%'}
+                loading='lazy'
                 className="object-cover w-full h-full"
-                priority={index === 0}
-                quality={100}
               />
             </div>
           ))}
@@ -97,10 +100,10 @@ export default function StoryHeroSlider() {
                      opacity-0 group-hover:opacity-100"
             aria-label="Previous slide"
           >
-            <svg 
-              className="w-6 h-6 text-gray-800" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              className="w-6 h-6 text-gray-800"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -114,10 +117,10 @@ export default function StoryHeroSlider() {
                      opacity-0 group-hover:opacity-100"
             aria-label="Next slide"
           >
-            <svg 
-              className="w-6 h-6 text-gray-800" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              className="w-6 h-6 text-gray-800"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -132,9 +135,9 @@ export default function StoryHeroSlider() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300
-                        ${index === currentSlide 
-                          ? 'w-8 bg-red-500' 
-                          : 'bg-gray-300 hover:bg-red-200'}`}
+                        ${index === currentSlide
+                  ? 'w-8 bg-red-500'
+                  : 'bg-gray-300 hover:bg-red-200'}`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

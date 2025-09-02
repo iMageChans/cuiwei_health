@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 interface Question {
@@ -161,7 +161,7 @@ export default function StressTestPage() {
         </div>
 
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait"> */}
             {!showResults ? (
               <div className="p-8">
                 <motion.div
@@ -263,8 +263,11 @@ export default function StressTestPage() {
                       <div className="relative w-24 h-24 flex-shrink-0">
                         <Image
                           src="/qr-code.png"
-                          alt="Download Impulse App"
-                          fill
+                          alt="Download Impulse App Qr Code"
+                          loading="lazy"
+                          title="Download Impulse App Qr Code"
+                          width={96}
+                          height={96}
                           className="object-contain"
                         />
                       </div>
@@ -276,10 +279,15 @@ export default function StressTestPage() {
                           Monitor your stress levels over time and get personalized recommendations for better mental wellbeing.
                         </p>
                         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                          <button className="px-6 py-3 bg-purple-500 text-white rounded-lg font-semibold 
-                                         hover:bg-purple-600 transition-colors">
+                          <a
+                            href="https://apps.apple.com/app/id6465695370"
+                            target="_blank"
+                            rel='nofollow noopener noreferrer'
+                            className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold 
+                                 hover:bg-blue-600 transition-colors"
+                          >
                             Download App
-                          </button>
+                          </a>
                           <button
                             onClick={resetTest}
                             className="px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold 
@@ -294,7 +302,7 @@ export default function StressTestPage() {
                 </motion.div>
               </div>
             )}
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
         </div>
       </div>
     </main>

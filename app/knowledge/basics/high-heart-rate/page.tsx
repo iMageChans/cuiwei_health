@@ -1,6 +1,3 @@
-import type { Metadata } from 'next'
-import { ArticleJsonLd } from 'next-seo';
-
 import ArticleLayout from '../../../components/ArticleLayout'
 import Image from 'next/image'
 
@@ -16,13 +13,35 @@ export const metadata = {
     "Measure your pulse",
     "Health",
   ],
-  // openGraph 为开放数据 既 三方平台 比如 twitter fb WhatsApp 等应用接入的通用展示数据
   openGraph: {
-    title: "High Heart Rate", // 同上
-    description: "Understanding and managing elevated heart rate", // 同上
-    // 推荐 至少使用images,images 配置是用户在社交媒体打开网页时，所展现的图文  如果不想特殊定义 保持和 coverImage 一样也可
-    images: ['/images/articles/article2.png'],
-    type: "website",
+    title: 'High Heart Rate | Impulse',
+    description: 'Understanding and managing elevated heart rate',
+    url: 'https://heartwellness.app/knowledge/basics/high-heart-rate',
+    type: 'website',
+    images: [
+      {
+        url: 'https://heartwellness.app/open-graph.png',
+        width: 1200,
+        height: 630,
+        alt: 'Impulse Heart Rate Monitor',
+        type: 'photo',
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'High Heart Rate | Impulse',
+    description: 'Understanding and managing elevated heart rate',
+    site: 'https://heartwellness.app/knowledge/basics/high-heart-rate',
+    images: [
+      {
+        url: 'https://heartwellness.app/open-graph.png',
+        width: 1200,
+        height: 630,
+        alt: 'Impulse Heart Rate Monitor',
+        type: 'photo'
+      }
+    ]
   },
 };
 
@@ -237,8 +256,11 @@ export default function HighHeartRate() {
             <div className="relative w-24 h-24 flex-shrink-0">
               <Image
                 src="/qr-code.png"
-                alt="Download QR Code"
-                fill
+                alt="Download Impulse App Qr Code"
+                loading="lazy"
+                title="Download Impulse App Qr Code"
+                width={96}
+                height={96}
                 className="object-contain"
               />
             </div>

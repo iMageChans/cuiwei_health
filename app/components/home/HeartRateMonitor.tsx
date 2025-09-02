@@ -96,23 +96,12 @@ export default function HeartRateMonitor({ bpm }: HeartRateMonitorProps) {
             transition={{ delay: 0.6 }}
           >
             <div className="flex items-center gap-2">
-              <motion.div
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  repeatDelay: 0.3
-                }}
-              >
                 <svg className="w-5 h-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
                 </svg>
                 <span className="text-2xl font-bold text-red-500">
                   {Math.round(bpm)}
                 </span>
-              </motion.div>
             </div>
             <div className="flex flex-col items-start">
               <span className="text-xs text-gray-500">Heart Rate</span>

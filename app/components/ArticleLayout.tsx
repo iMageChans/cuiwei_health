@@ -143,7 +143,7 @@ export default function ArticleLayout({
                   {category}
                 </span>
                 <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                  {title}
+                  Impulse - {title}
                 </h1>
                 <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                   {description}
@@ -174,6 +174,8 @@ export default function ArticleLayout({
                   <Image
                     src={author.image}
                     alt={author.name}
+                    title={author.name}
+                    loading='lazy'
                     width={64}
                     height={64}
                     className="object-cover"
@@ -190,7 +192,10 @@ export default function ArticleLayout({
                 <Image
                   src={coverImage}
                   alt={title}
-                  fill
+                  title={title}
+                  loading='lazy'
+                  width={768}
+                  height={330}
                   className="object-cover"
                 />
               </div>

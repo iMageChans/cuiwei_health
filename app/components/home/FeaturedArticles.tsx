@@ -1,7 +1,8 @@
 'use client'
 
-import SafeImage from '../ui/SafeImage'
+import dynamic from 'next/dynamic';
 import Link from 'next/link'
+const SafeImage = dynamic(() => import('../ui/SafeImage'));
 
 const articles = [
   {
@@ -43,7 +44,6 @@ export default function FeaturedArticles() {
                   <SafeImage
                     src={article.image}
                     alt={article.title}
-                    fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
