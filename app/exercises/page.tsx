@@ -1,17 +1,17 @@
 
 import { Metadata } from 'next';
-import KnowledgeBase from './KnowledgeBase';
+import ExercisesBase from './ExercisesBase';
 
 export const metadata: Metadata = {
-  title: 'Knowledge | Impulse',
+  title: 'Exercises | Impulse',
   icons: {
     icon: '/logo.png',
   },
   description: 'Monitor your heart rate, track your health, and improve your wellbeing with Impulse.',
   openGraph: {
-    title: 'Knowledge | Impulse',
+    title: 'Exercises | Impulse',
     description: 'Monitor your heart rate, track your health, and improve your wellbeing with Impulse.',
-    url: 'https://heartwellness.app/knowledge',
+    url: 'https://heartwellness.app/exercises',
     type: 'website',
     images: [
       {
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Knowledge | Impulse',
+    title: 'exercises | Impulse',
     description: 'Monitor your heart rate, track your health, and improve your wellbeing with Impulse.',
-    site: 'https://heartwellness.app/knowledge',
+    site: 'https://heartwellness.app/exercises',
     images: [
       {
         url: 'https://heartwellness.app/open-graph.png',
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   ),
 }
 
-export default function Knowledge() {
+export default function Exercises() {
 
   return (
-    <KnowledgeBase/>
+    <ExercisesBase/>
   )
 } 

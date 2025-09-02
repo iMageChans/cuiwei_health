@@ -7,6 +7,7 @@ services:
     volumes:
       - /www/ClipNote/sitemap.xml:/app/public/sitemap.xml
       - /www/ClipNote/sitemap-knowledge.xml:/app/public/sitemap-knowledge.xml
+      - /www/ClipNote/sitemap-exercises.xml:/app/public/sitemap-exercises.xml
     ports:
       - "3000:3000"
     environment:

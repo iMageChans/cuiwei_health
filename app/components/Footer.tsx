@@ -16,6 +16,7 @@ export default function Footer() {
           <div className={styles.linksSection}>
             <h4 className={styles.sectionTitle}>Health Knowledge</h4>
             <ul className={styles.linksList}>
+              <li><Link href="/exercises">Exercise</Link></li>
               <li><Link href="/knowledge">Heart Rate Basics</Link></li>
               <li><Link href="/knowledge">Stress Management</Link></li>
               <li><Link href="/knowledge">Healthy Lifestyle</Link></li>

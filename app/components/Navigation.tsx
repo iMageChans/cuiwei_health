@@ -28,7 +28,7 @@ export default function Navigation() {
   return (
     <>
       <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
-        <div className="nav-container">
+        <div className="nav-container" style={{background:'white',opacity:1}}>
           {/* Logo */}
           <Link href="/" className="nav-logo">
             <Image
@@ -54,6 +54,9 @@ export default function Navigation() {
               </Link>
               <Link href="/knowledge" className={`nav-link ${pathname.startsWith('/knowledge') ? 'active' : ''}`}>
                 Health Knowledge
+              </Link>
+              <Link href="/exercises" className={`nav-link ${pathname.startsWith('/exercises') ? 'active' : ''}`}>
+                 Fit
               </Link>
               <Link href="/tools" className={`nav-link ${pathname.startsWith('/tools') ? 'active' : ''}`}>
                 Health Tools
@@ -126,6 +129,9 @@ export default function Navigation() {
             </Link>
             <Link href="/knowledge" className={`nav-mobile-link ${pathname.startsWith('/knowledge') ? 'active' : ''}`}>
               Health Knowledge
+            </Link>
+            <Link href="/exercises" className={`nav-mobile-link ${pathname.startsWith('/exercises') ? 'active' : ''}`}>
+                 Fit
             </Link>
             <Link href="/tools" className={`nav-mobile-link ${pathname.startsWith('/tools') ? 'active' : ''}`}>
               Health Tools
